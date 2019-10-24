@@ -1,0 +1,13 @@
+{{> navbar this}}
+<h1>Log In</h1>
+<form action="/auth/login" class="uk-grid-small" uk-grid method="post">
+    <div class="uk-width-1-1">
+        <input name="username" class="uk-input" type="text"
+            placeholder="Username">
+    </div>
+    <div class="uk-width-1-1">
+        <input name="password" class="uk-input" type="password"
+            placeholder="******">
+    </div>
+    <button class="uk-button uk-button-primary">Login</button>
+</form>

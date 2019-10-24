@@ -1,0 +1,20 @@
+{{> userNavbar}}
+<section class="uk-container uk-text-center">
+    {{!-- <form class="uk-form-stacked" action="/app/changePhoto"
+        method="POST" enctype="multipart/form-data">
+        <label for="image">
+            <img class="profile-img" src="{{image}}">
+            <input style="display:none;" class="uk-input"
+                onchange="this.form.submit()" type="file" name="image"
+                id="image">
+        </label>
+    </form> --}}
+    <h1 class="uk-heading-medium uk-margin">{{oneUser.username}}</h1>
+    <div class="profile-info">
+        <h3>{{oneUser.name}}</h3>
+        <p>Email: {{oneUser.email}}</p>
+        <p>Age: {{oneUser.age}}</p>
+        <p>City: {{oneUser.city}}</p>
+        <p>Phone: {{oneUser.phone}}</p>
+    </div>
+</section>

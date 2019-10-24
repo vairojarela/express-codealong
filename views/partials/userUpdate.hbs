@@ -1,0 +1,51 @@
+<a class="uk-button uk-button-primary" href="#modal-sections" uk-toggle>Edit</a>
+<div id="modal-sections" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Edit Profile</h2>
+        </div>
+        <div class="uk-modal-body">
+            <form class="uk-form-stacked uk-margin-large"
+                action="/profile/edit" method="POST">
+                <label class="uk-form-label" for="form-stacked-text">Username</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" type="text" name="username"
+                        id="username" disabled value="{{username}}">
+                </div>
+                <label class="uk-form-label" for="form-stacked-text">Name</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" type="text" name="name" id="name"
+                        placeholder="First Name" value="{{name}}">
+                </div>
+                <label class="uk-form-label" for="form-stacked-text">Email</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" type="text" name="email" id="email"
+                        placeholder="someone@example.com" value="{{email}}">
+                </div>
+                <label class="uk-form-label" for="form-stacked-text">Phone</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" type="text" name="phone" id="phone"
+                        placeholder="Input a valid phone number"
+                        value="{{phone}}">
+                </div>
+                <label class="uk-form-label" for="form-stacked-text">Age</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" type="Number" name="age" id="age"
+                        placeholder="Age" value="{{age}}">
+                </div>
+                <label class="uk-form-label" for="form-stacked-text">City</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" type="text" name="city" id="city"
+                        placeholder="City" value="{{city}}">
+                </div>
+                <div class="uk-modal-footer uk-text-right">
+                    <button class="uk-button uk-button-primary"
+                        type="submit">Save</button>
+                </div>
+            </form>
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+        </div>
+
+    </div>
+</div>

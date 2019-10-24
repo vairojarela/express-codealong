@@ -1,0 +1,33 @@
+{{> navbar this}}
+<h1>Sign Up</h1>
+<form action="/auth/signup" class="uk-grid-small" uk-grid method="post">
+    <div class="uk-width-1-1">
+        <input class="uk-input" type="text" name="username"
+            placeholder="Username">
+    </div>
+    <div class="uk-width-1-1">
+        <input class="uk-input" type="password" name="password"
+            placeholder="******">
+    </div>
+    <div class="uk-width-1-1">
+        <input class="uk-input" type="password" name="passwordtwo"
+            placeholder="******">
+    </div>
+    <button class="uk-button uk-button-primary">Sign Up</button>
+</form>
+
+{{#if messages.length}}
+<ul class="validation">
+    <li>{{messages.[0]}}</li>
+</ul>
+{{/if}}
+{{#if password.length}}
+<ul class="validation">
+    <li>{{password.[0]}}</li>
+</ul>
+{{/if}}
+{{#if name.length}}
+<ul class="validation">
+    <li>{{name.[0]}}</li>
+</ul>
+{{/if}}
