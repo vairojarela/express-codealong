@@ -1,5 +1,5 @@
 {{> userNavbar}}
-<section class="uk-container uk-text-center">
+<div class="uk-section uk-text-center">
     {{!-- <form class="uk-form-stacked" action="/app/changePhoto"
         method="POST" enctype="multipart/form-data">
         <label for="image">
@@ -9,12 +9,52 @@
                 id="image">
         </label>
     </form> --}}
-    <h1 class="uk-heading-medium uk-margin">{{oneUser.username}}</h1>
     <div class="profile-info">
-        <h3>{{oneUser.name}}</h3>
-        <p>Email: {{oneUser.email}}</p>
-        <p>Age: {{oneUser.age}}</p>
-        <p>City: {{oneUser.city}}</p>
-        <p>Phone: {{oneUser.phone}}</p>
+        <div class="uk-width-auto">
+            <img class="uk-comment-avatar" src="{{oneUser.image}}"
+                width="60"
+                height="60" alt="{{oneUser.name}}">
+        </div>
+        <h3 class="uk-heading-small uk-margin">{{oneUser.username}}</h3>
+        <h4>{{oneUser.name}}</h4>
+        <p>Email:{{oneUser.email}}</p>
+        <p>Age:{{oneUser.age}}</p>
+        <p>City:{{oneUser.city}}</p>
+        <p>Phone:{{oneUser.phone}}</p>
+
     </div>
-</section>
+</div>
+
+
+<div class="uk-section uk-section-secondary uk-preserve-color">
+    <div class="uk-container">
+
+        <div class="uk-panel uk-light uk-margin-medium">
+            <h3>Posts by {{oneUser.username}}</h3>
+        </div>
+
+        <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
+            {{#each userPosts }}
+            <div>
+                <div class="uk-card uk-card-hover uk-card-default
+                    uk-card-body">
+                    <div class="uk-card-header">
+                        <div class="uk-card-title">
+                            <a class="uk-button uk-button-text"
+                                href="/posts/{{_id}}"><h1>
+                                    {{this.title}}
+                                </h1>
+
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card-body">
+                            {{this.content}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each }}
+
+        </div>

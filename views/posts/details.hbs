@@ -1,12 +1,49 @@
 {{>userNavbar}}
 <div class="uk-section uk-section-overlap uk-section-default uk-preserve-color">
     <div class="uk-container">
-        <div class="uk-text-lead">
-            {{onePost.title}}
+        <div class="uk-margin">
+
+            <a href="/posts">-Back</a>
         </div>
-        <p class="uk-text-meta">
+        <div class="uk-text-lead">
+            <h1>
+                {{onePost.title}}
+
+
+
+            </h1>
+            <a class="uk-link-toggle"
+                href="/users/{{onePost.author._id}}">
+                @{{onePost.author.username}}
+            </a>
+        </div>
+
+
+        <p class="uk-text-justify">
             {{onePost.content}}
         </p>
-        <a href="/posts">Back</a>
+        <hr class="uk-divider-icon">
+
+        <div class="uk-margin">
+
+
+
+        </div>
+        <div class="uk-margin">
+            {{>addComment}}
+        </div>
+        <div class="uk-margin">
+
+            <h4 class="uk-text-lead">Comments ({{onePost.comments.length}})
+            </h4>
+        </div>
+        {{#if onePost.comments}}
+        {{#each onePost.comments}}
+        {{>comment}}
+        {{/each}}
+        {{else}}
+        <p>No comments yet... Be the
+            first!</p>
+        {{/if}}
 
     </div>

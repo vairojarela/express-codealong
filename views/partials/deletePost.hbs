@@ -1,0 +1,13 @@
+<button class="uk-button uk-button-danger uk-margin-small-top"
+    uk-toggle="target: #confirmDelete" type="button">Delete Post</button>
+<div id="confirmDelete" class="uk-flex-top" uk-modal>
+    <div class="uk-text-center uk-modal-dialog uk-margin-auto-vertical
+        uk-modal-body">
+        <p>Are you sure you want to delete this post?</p>
+        <form action="/posts/delete/{{_id}}" method="POST">
+            <button class="uk-button uk-button-danger uk-margin-top"
+                type="submit">Yes</button>
+        </form>
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+    </div>
+</div>

@@ -1,15 +1,17 @@
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
         <ul class="uk-navbar-nav">
-            <li><a href="/posts">Home</a></li>
+            <li><a href="/posts">Secret Post App</a></li>
         </ul>
     </div>
     <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav">
+        <div class="uk-navbar-nav">
             <li><a href="/users">profile</a></li>
+        </div>
+        <div class="uk-navbar-item">
             <form action="/auth/logout" method="POST">
-                <li><button>Logout</button></li>
+                <button class="uk-button uk-button-danger">Logout</button>
             </form>
-        </ul>
+        </div>
     </div>
 </nav>

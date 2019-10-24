@@ -1,30 +1,43 @@
 {{> userNavbar}}
 <div class="uk-section uk-section-overlap uk-section-primary uk-preserve-color">
+    {{#if posts}}
     <div class="uk-container">
         <div class="uk-panel uk-light uk-margin-medium">
-            <div class="uk-text-right">
-                {{>postsAdd}}
-            </div>
-            <h1 class="uk-heading-medium">Posts</h3>
+            <h1 class="uk-heading-small">Posts <span class="uk-text-meta">
+                    ({{posts.length}})
+                </span></h3>
+            {{>postsAdd}}
         </div>
-        <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
+        <div class=".uk-child-width-expand k-grid-match uk-grid-medium
+            uk-width-expandd@m" uk-grid>
             {{#each posts}}
-            <div>
+            <a class="uk-display-block uk-link-toggle" href="posts/{{_id}}">
                 <div class="uk-card uk-card-hover uk-card-default
                     uk-card-body">
-                    <div class="uk-card-header">
-                        <div class="uk-card-title">
-                            <a class="uk-button uk-button-text"
-                                href="posts/{{_id}}">{{title}}
-                            </a>
-                        </div>
+                    <div class="uk-link-heading">
+
+                        <h2>{{title}}</h2>
                     </div>
-                    <div class="uk-card-body">{{content}}</div>
-                    <div class="uk-card-body">by: <a
-                            href="/users/{{author._id}}">{{author.username}}</a></div>
+                    <div class="uk-card-body">
+                        {{content}}
+                    </div>
+
+                    <div>
+                        <img style="border-radius: 50%;" width="32"
+                            heigth="32" src="{{author.image}}"
+                            alt="">
+                        <a href="/users/{{author._id}}">@{{author.username}}</a>
+                        {{relativeDate}}
+                    </div>
+                    <div>
+
+                    </div>
                 </div>
-            </div>
+            </a>
             {{/each}}
+            {{else}}
+            <h3 class="uk-light">No posts yet</h3>
+            {{/if}}
         </div>
     </div>
 </div>

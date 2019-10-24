@@ -28,12 +28,10 @@ const userSchema = new Schema(
     phone: {
       type: String
     },
-    posts: [
-      {
-        type: ObjectId,
-        ref: "Post"
-      }
-    ]
+    image: {
+      type: String,
+      default: "http://s3.amazonaws.com/37assets/svn/765-default-avatar.png"
+    }
   },
   {
     timestamps: true

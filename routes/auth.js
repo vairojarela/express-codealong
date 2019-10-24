@@ -24,7 +24,7 @@ router.post("/signup", async (req, res, next) => {
     const user = await User.findOne({ username });
     if (user) {
       req.flash("errorUserFind", "This username is already registred");
-      return res.redirect("/sigup");
+      return res.redirect("/auth/signup");
     }
     const salt = bcrypt.genSaltSync(saltRounds);
     const hashedPassword = bcrypt.hashSync(password, salt);
@@ -52,7 +52,7 @@ router.post("/login", async (req, res, next) => {
       } else {
         req.flash("passwordBad", "This is not the password for this user");
         req.flash("name", username);
-        return res.redirect("/login");
+        return res.redirect("/auth/login");
       }
     }
   } catch (error) {

@@ -1,26 +1,32 @@
-<a class="uk-button uk-button-primary"href="#modal-sections" uk-toggle>Add</a>
-<div id="modal-sections" uk-modal>
-    <div class="uk-modal-dialog">
+<a class="uk-button uk-button-primary" href="#modal-sections" uk-toggle>Add</a>
+<div id="modal-sections" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-margin-auto-vertical">
         <button class="uk-modal-close-default" type="button" uk-close></button>
         <div class="uk-modal-header">
             <h2 class="uk-modal-title">Add Post</h2>
         </div>
         <div class="uk-modal-body">
-            <form class="uk-form-stacked uk-margin-large"
+            <form class="uk-form-stacked"
                 action="/posts/add" method="POST">
-                <label class="uk-form-label" for="form-stacked-text">Title</label>
+                <label style="display:none;" class="uk-form-label"
+                    for="form-stacked-text">Title</label>
                 <div class="uk-form-controls">
-                    <input class="uk-input" type="text" name="title" id="title"
-                        placeholder="Awesome title">
+                    <input required class="uk-input" type="text" name="title"
+                        id="title"
+                        placeholder="Give it a title!">
                 </div>
-                <label class="uk-form-label" for="form-stacked-text">Content</label>
-                <div class="uk-form-controls">
-                    <input class="uk-input" type="text" name="content"
-                        id="content"
-                        placeholder="Awesome decription">
+                <label style="display:none;" class="uk-form-label"
+                    for="form-stacked-text">Content</label>
+                <div class="uk-form-controls uk-margin">
+
+                    <textarea required name="content"
+                        id="content" class="uk-textarea" rows="5"
+                        placeholder="And a decription..."></textarea>
+
+
                 </div>
 
-                <div class="uk-modal-footer uk-text-center">
+                <div class="uk-modal-margin uk-text-center">
                     <button class="uk-button uk-button-primary"
                         type="submit">Save</button>
                 </div>

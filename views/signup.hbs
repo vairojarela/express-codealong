@@ -1,21 +1,22 @@
 {{> navbar this}}
-<h1>Sign Up</h1>
-<form action="/auth/signup" class="uk-grid-small" uk-grid method="post">
-    <div class="uk-width-1-1">
-        <input class="uk-input" type="text" name="username"
-            placeholder="Username">
-    </div>
-    <div class="uk-width-1-1">
-        <input class="uk-input" type="password" name="password"
-            placeholder="******">
-    </div>
-    <div class="uk-width-1-1">
-        <input class="uk-input" type="password" name="passwordtwo"
-            placeholder="******">
-    </div>
-    <button class="uk-button uk-button-primary">Sign Up</button>
-</form>
-
+<div class="uk-container uk-margin">
+    <h1>Sign Up</h1>
+    <form action="/auth/signup" class="uk-grid-small" uk-grid method="post">
+        <div class="uk-width-1-1">
+            <input class="uk-input" type="text" name="username"
+                placeholder="Username">
+        </div>
+        <div class="uk-width-1-1">
+            <input class="uk-input" type="password" name="password"
+                placeholder="********">
+        </div>
+        <div class="uk-width-1-1">
+            <input class="uk-input" type="password" name="passwordtwo"
+                placeholder="********">
+            <button class="uk-margin uk-button uk-button-primary">Sign Up</button>
+        </div>
+    </form>
+</div>
 {{#if messages.length}}
 <ul class="validation">
     <li>{{messages.[0]}}</li>
