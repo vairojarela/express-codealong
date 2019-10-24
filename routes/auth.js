@@ -170,10 +170,6 @@ router.post("/login", async (req, res, next) => {
     next(error);
   }
 });
-
-router.post("/logout", isNotLoggedIn, (req, res, next) => {
-  delete req.session.currentUser;
-  res.redirect("/");
-}); */
+*/
 
 module.exports = router;

@@ -18,17 +18,19 @@
 
                         <h2>{{title}}</h2>
                     </div>
-                    <div class="uk-card-body">
+                    <div class="uk-margin">
                         {{content}}
                     </div>
 
                     <div>
-                        <img style="border-radius: 50%;" width="32"
+                        <img style="border-radius: 50%;"
+                            width="32"
                             heigth="32" src="{{author.image}}"
-                            alt="">
+                            alt="{{author.name}}">
                         <a href="/users/{{author._id}}">@{{author.username}}</a>
-                        {{relativeDate}}
+                        <span uk-icon="comment"></span>{{comments.length}}
                     </div>
+                    {{relativeDate}}
                     <div>
 
                     </div>

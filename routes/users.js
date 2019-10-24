@@ -2,12 +2,17 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const Post = require("../models/Post");
+
+const moment = require("moment");
 const { parser } = require("../config/cloudinary.js");
 const { isLoggedIn, isNotLoggedIn } = require("../middlewares/authMiddlewares");
 
 router.get("/", isNotLoggedIn, async (req, res, next) => {
   const user = req.session.currentUser;
   const posts = await Post.find({ author: user._id });
+  posts.forEach(post => {
+    post.relativeDate = moment(post.date).fromNow();
+  });
   res.render("./users/edit-user", { user, posts });
 });
 
